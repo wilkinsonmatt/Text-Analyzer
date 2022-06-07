@@ -44,8 +44,66 @@ Describe: numberOfOccurrencesInText()
   Code:
     const text = "";
     const word = "red";
-  numberOfOccurrencesInText(word, text);
+    numberOfOccurrencesInText(word, text);
   Expected Output: 0
+
+  Test: "It should return 1 occurrence of a word when the word and the text are the same."
+  Code:
+    const text = "red";
+    const word = "red";
+    numberOfOccurrencesInText(word, text);
+  Expected Output: 1
+
+  Test: "It should return 0 occurrences of a word when the word and the text are different."
+  Code:
+    const text = "red";
+    const word = "blue";
+    numberOfOccurrencesInText(word, text);
+  Expected Output: 0
+
+  Test: "It should return the number of occurrences of a word."
+  Code:
+    const text = "red blue red red red green";
+    const word = "red";
+    numberOfOccurrencesInText(word, text);
+  Expected Output: 4
+
+  Test: "It should return a word match regardless of case."
+  Code:
+    const text = "red RED Red green Green GREEN";
+    const word = "Red";
+    numberOfOccurrencesInText(word, text);
+  Expected Output: 3
+
+  Test: "It should return a word match regardless of punctuation."
+  Code:
+    const text = "Red! Red. I like red, green, and yellow.";
+    const word = "Red";
+    numberOfOccurrencesInText(word, text);
+  Expected Output: 3
+
+  Test: "If an empty string is passed in as a word, it should return 0."
+  Code:
+    const word = "";
+    const text = "red RED Red!";
+    wordCounter(word, text);
+  Expected Output: 0
+
+<!-- Describe: removeOffensiveWords()
+
+  Test: "Should return no words if offensive words are submit."
+  Code:
+    const text = "zoinks, muppeteer, biffaroni, and loopdaloop.";
+    const word = "zoinks, muppeteer, biffaroni, and loopdaloop.";
+    removeOffensiveWords(word, text);
+  Expected Output: 0
+
+  Test: "It should return a value not including the offensive words submit."
+  Code:
+    const text = "red, green, zoinks, muppeteer, biffaroni, and loopdaloop.";
+    const word = "zoinks, muppeteer, biffaroni, and loopdaloop.";
+    removeOffensiveWords(word, text);
+  Expected Output: 2 -->
 
 ## Technologies Used
 
